@@ -22,7 +22,42 @@ level4 - "ssh bandit4@bandit.labs.overthewire.org -p 2220", password - "2EW7BBsr
          10 files -file00 to -file09 exists in inhere
          Though all directories can be individually checked in this case, it is not feasible instead                                               
          since all files have similar name, a wildcard (*) can be used.
-         cat ./-file* or nano ./-file*
+         cat ./-file* or nano ./-file* returns bunch of text in which only -file07 returns human-readable text - lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+
+level5 - "ssh bandit5@bandit.labs.overthewire.org -p 2220", password - "lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR"
+         ls -> inhere, cd inhere, ls
+         ls returns 20 directories maybehere00-maybehere19
+         It is given that the file size is 1033.
+         file -size 1033c gives ./maybehere07/.file2
+         cat ./maybehere07/.file2 -> P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
          
-        
-      
+level6 - "ssh bandit6"@bandit.labs.overthewire.org -p 2220", password - "P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU"
+         
+         
+level7 - "ssh bandit7"@bandit.labs.overthewire.org -p 2220", password - ""
+level8 - "ssh bandit8"@bandit.labs.overthewire.org -p 2220", password - ""
+level9 - "ssh bandit9"@bandit.labs.overthewire.org -p 2220", password - ""
+level10 - "ssh bandit10"@bandit.labs.overthewire.org -p 2220", password - ""
+level11 - "ssh bandit11"@bandit.labs.overthewire.org -p 2220", password - ""
+level12 - "ssh bandit12"@bandit.labs.overthewire.org -p 2220", password - ""
+level13 - "ssh bandit13"@bandit.labs.overthewire.org -p 2220", password - ""
+level14 - "ssh bandit14"@bandit.labs.overthewire.org -p 2220", password - ""
+level15 - "ssh bandit15"@bandit.labs.overthewire.org -p 2220", password - ""
+level16 - "ssh bandit16"@bandit.labs.overthewire.org -p 2220", password - ""
+level17 - "ssh bandit17"@bandit.labs.overthewire.org -p 2220", password - ""
+level18 - "ssh bandit18"@bandit.labs.overthewire.org -p 2220", password - ""
+level19 - "ssh bandit19"@bandit.labs.overthewire.org -p 2220", password - ""
+level20 - "ssh bandit20"@bandit.labs.overthewire.org -p 2220", password - ""
+level21 - "ssh bandit21"@bandit.labs.overthewire.org -p 2220", password - ""
+level22 - "ssh bandit22"@bandit.labs.overthewire.org -p 2220", password - ""
+level23 - "ssh bandit23"@bandit.labs.overthewire.org -p 2220", password - ""
+level24 - "ssh bandit24"@bandit.labs.overthewire.org -p 2220", password - ""
+level25 - "ssh bandit25"@bandit.labs.overthewire.org -p 2220", password - ""
+level26 - "ssh bandit26"@bandit.labs.overthewire.org -p 2220", password - ""
+level27 - "ssh bandit27"@bandit.labs.overthewire.org -p 2220", password - ""
+level28 - "ssh bandit28"@bandit.labs.overthewire.org -p 2220", password - ""
+level29 - "ssh bandit29"@bandit.labs.overthewire.org -p 2220", password - ""
+level30 - "ssh bandit30"@bandit.labs.overthewire.org -p 2220", password - ""
+level31 - "ssh bandit31"@bandit.labs.overthewire.org -p 2220", password - ""
+level32 - "ssh bandit32"@bandit.labs.overthewire.org -p 2220", password - ""
+level33 - "ssh bandit33"@bandit.labs.overthewire.org -p 2220", password - ""
