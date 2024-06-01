@@ -55,7 +55,7 @@ def over():
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀""")
 
 def roulette(): 
-    trigger = input("Press any key to trigger : ") 
+    trigger = input("Press any key spin the cylinder and press trigger : ") 
     bullet = random.randrange(1,7) #Selecting the chamber where bullet is at after spinning the cylinder
     shot_at = 6 #Let us fix that the shot is fired when it is at 6
     print()
@@ -67,12 +67,13 @@ def roulette():
             print("Alive !")
             alive()     
         bullet+=1 #If the trigger is pressed 6 times then atleast 1 shot must be fired, if this condition is not there then
-                            #if trigger is pressed 6 times then there is a possibility that no shot is fired despite having 1 bullet 
+                  #if trigger is pressed 6 times then there is a possibility that no shot is fired despite having 1 bullet
+                  #but since cylinder is spun everytime before fire it does not really matter 
 
         print()
-        out = input("Press ENTER to continue any other key to  exit : ")
+        out = input("Press ENTER to continue any other key to  exit : \n")
         if out == "":
-            roulette()
+            roulette()#Calling the function again 
         else:
             print("Exited")
             exit()
