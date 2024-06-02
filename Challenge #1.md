@@ -2,17 +2,16 @@ Challenge #1
 https://overthewire.org/wargames/bandit
 
 **level0** - ***bandit0***     
-<pre>ls ↵ readme
-cat readme ↵ *password* </pre> 
+<pre><b>ls ↵ readme</b>
+<b>cat readme</b> ↵ *password* </pre> 
       
 **level1** - ***NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL***    
-<pre>ls ↵ -      
-The file name is "-"
-cat - does not return anything, so instead we write the path of the file -    
-cat /home/bandit1/- or cat ./- ↵ *password*</pre>     
+<pre><b>ls</b> ↵ - <i>The file name is "-"</i>
+<b>cat - </b> <i>does not return anything, so instead we write the path of the file -    
+cat /home/bandit1/- or cat ./- ↵ *password* </pre>     
            
 **level2** - ***rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi***        
-<pre>ls ↵ spaces in this filename
+<pre>ls ↵ The name of the file is <i>spaces in this filename</i>, (" ") should be added to the file name
 cat "spaces in this filename" ↵ *password*</pre>      
          
 **level3** - ***aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG***     
