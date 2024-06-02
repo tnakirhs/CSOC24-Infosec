@@ -66,7 +66,7 @@ def roulette():
         else:
             print("Alive !")
             alive()     
-        bullet+=1 #If the trigger is pressed 6 times then atleast 1 shot must be fired, if this condition is not there then
+        bullet+=1 #If the trigger is pressed 6 times without spinning the cylinder then atleast 1 shot must be fired, if this condition is not there then
                   #if trigger is pressed 6 times then there is a possibility that no shot is fired despite having 1 bullet
                   #but since cylinder is spun everytime before fire it does not really matter 
 
