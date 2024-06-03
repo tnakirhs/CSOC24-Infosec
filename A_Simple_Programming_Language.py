@@ -216,11 +216,11 @@ def main(): #it is the main body
                     print("- Take a deep breath. ")
                     time.sleep(1)
                     print("- For 10 syntax errors, here is your sessional dose of wisdom")
-                    quotes = ["- Correct syntax has been chasing you but you have always been faster.",\
-                                        "- We would agree with your syntax but then we would both be wrong.",\
-                                        "- A mistake that we did when trying to make this language completely foolproof was to underestimate your ingenuity.",\
-                                        "- You're the reason i created 'help'."]
-                    for i in random.choice(quotes):
+                    quotes = ['.retsaf neeb syawla evah uoy tub uoy gnisahc neeb sah xatnys tcerroC -', \
+                              ".gnorw eb htob d'ew neht tub xatnys ruoy htiw eerga dluow I -", \
+                              '.ytiunegni ruoy etamitserednu ot saw foorploof yletelpmoc egaugnal siht ekam ot gniyrt nehw did i taht ekatsim A -', \
+                               ".'pleh' detaerc i nosaer eht er'uoY -"]
+                    for i in random.choice(quotes)[::-1]:
                         print(i,end = "")
                         time.sleep(0.02)
                     print()
