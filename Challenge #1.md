@@ -67,6 +67,13 @@ it will only return <b>grep: data.txt: binary file matches</b>.</i>
 <b>cat data.txt | tr a-zA-Z n-za-mN-ZA-M</b> ↵ The password is *password*</pre>
 
 **level 12** - ***JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv***           
+<pre>
+
+I NEED SOME TIME TO COMPLETE THE WRITEUP
+      
+</pre>
+
+
 **level 13** - *** ***           
 **level 14** - *** ***           
 **level 15** - *** ***           
