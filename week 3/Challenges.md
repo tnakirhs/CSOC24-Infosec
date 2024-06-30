@@ -197,15 +197,130 @@ Upon inspect, the source has a further folder named ***hidden***,
 changing the path to ```/secret/hidden```,
 another folder is found named **_superhidden_**      
 changing the path to ```/secret/hidden/superhidden```
-Source code of _superhidden_ page reveals the flag  
+Source code of _superhidden_ page reveals the flag ***picoCTF{succ3ss_@h3n1c@10n_39849bcf}***      
 
+<br>    
 
-## I. <a href = "https://play.picoctf.org/practice/challenge/8?page=1&search=irish">Client-side-again</a> 
+## I. <a href = "https://play.picoctf.org/practice/challenge/69">Client-side-again</a> 
 <pre>
- 
+A web page with a login box is given. Entering any credential it says <i>Incorrect password</i>.
 </pre>
+<code>On looking the source code a JS function is given which needs to be beautified.</code>     
+```javascript
+var _0x5a46 = ['f49bf}', '_again_e', 'this', 'Password\x20Verified', 'Incorrect\x20password', 'getElementById', 'value', 'substring', 'picoCTF{', 'not_this'];
+(function(_0x4bd822, _0x2bd6f7) {
+    var _0xb4bdb3 = function(_0x1d68f6) {
+        while (--_0x1d68f6) {
+            _0x4bd822['push'](_0x4bd822['shift']());
+        }
+    };
+    _0xb4bdb3(++_0x2bd6f7);
+}(_0x5a46, 0x1b3));
+var _0x4b5b = function(_0x2d8f05, _0x4b81bb) {
+    _0x2d8f05 = _0x2d8f05 - 0x0;
+    var _0x4d74cb = _0x5a46[_0x2d8f05];
+    return _0x4d74cb;
+};
 
-## J. <a href = "https://play.picoctf.org/practice/challenge/8?page=1&search=irish">Who are you?</a> 
+function verify() {
+    checkpass = document[_0x4b5b('0x0')]('pass')[_0x4b5b('0x1')];
+    split = 0x4;
+    if (checkpass[_0x4b5b('0x2')](0x0, split * 0x2) == _0x4b5b('0x3')) {
+        if (checkpass[_0x4b5b('0x2')](0x7, 0x9) == '{n') {
+            if (checkpass[_0x4b5b('0x2')](split * 0x2, split * 0x2 * 0x2) == _0x4b5b('0x4')) {
+                if (checkpass[_0x4b5b('0x2')](0x3, 0x6) == 'oCT') {
+                    if (checkpass[_0x4b5b('0x2')](split * 0x3 * 0x2, split * 0x4 * 0x2) == _0x4b5b('0x5')) {
+                        if (checkpass['substring'](0x6, 0xb) == 'F{not') {
+                            if (checkpass[_0x4b5b('0x2')](split * 0x2 * 0x2, split * 0x3 * 0x2) == _0x4b5b('0x6')) {
+                                if (checkpass[_0x4b5b('0x2')](0xc, 0x10) == _0x4b5b('0x7')) {
+                                    alert(_0x4b5b('0x8'));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        alert(_0x4b5b('0x9'));
+    }
+}      
+```
+
+
+<pre>
+The given function looks like a password verification system.
+It verifies the password during runtime, but by reversing the function we can see with what value
+is it comparing the entered password.
+The verify() function verifies if the input password (checkpass) conforms to a specific format and
+contains certain substrings whose indexes are overlapping in some cases in specified positions. 
+Each if statement corresponds to checking one part of the password format. If all checks pass, 
+it alerts "Password Verified"; otherwise, it alerts "Incorrect password".
+</pre>
+    
+> _0x4b5b("0x0") - "getElementById"     
+> _0x4b5b("0x1") - "value"     
+> _0x4b5b("0x2") - "substring"     
+> _0x4b5b("0x3") - "picoCTF{"     
+> _0x4b5b("0x4") - "not_this"     
+> _0x4b5b("0x5") - "55670}"     
+> _0x4b5b("0x6") - "_again_0"     
+> _0x4b5b("0x7") - "this"     
+> _0x4b5b("0x8") - "Password Verified"     
+> _0x4b5b("0x9") - "Incorrect password"           
+         
+_These are the values from the array, and the substring is checked against them in each step._      
+_Substituting the values in the program_    
+```javascript
+if (checkpass["substring"](0, split * 2) == "picoCTF{") {
+```
+Checks if the substring from index 0 to split * 2 (which is 8 characters if split is 4) matches "picoCTF{".     
+
+```javascript
+if (checkpass["substring"](7, 9) == "{n") {
+```
+Checks if the substring from index 7 to 9 is "{n".
+
+```javascript
+if (checkpass["substring"](split * 2, split * 2 * 2) == "not_this") {
+```
+Checks if the substring from index 8 to 16 (if split is 4) matches "not_this".
+
+```javascript
+if (checkpass["substring"](3, 6) == "oCT") {
+```
+Checks if the substring from index 3 to 6 matches "oCT".
+
+```javascript
+if (checkpass["substring"](split * 3 * 2, split * 4 * 2) == "55670}") {
+```
+Checks if the substring from index 16 to 24 (if split is 4) matches "55670}".
+
+```javascript
+if (checkpass["substring"](6, 11) == "F{not") {
+```
+Checks if the substring from index 6 to 11 matches "F{not".
+
+```javascript
+if (checkpass["substring"](12, 16) == "this") {
+```
+Checks if the substring from index 12 to 16 matches "this".
+
+```javascript
+if (checkpass["substring"](split * 2 * 2, split * 3 * 2) == "_again_0") {
+  alert("Password Verified");
+}
+```
+Checks if the substring from index 8 to 16 (if split is 4) matches "_again_0". If all conditions are satisfied,
+it displays an alert saying "Password Verified".    
+
+If any of the conditions fail, an alert stating "Incorrect password" is displayed.
+
+By just removing the overlaping we get the flag ***picoCTF{not_this_again_55670}***      
+
+<br>
+     
+## J. <a href = "https://play.picoctf.org/practice/challenge/142">Who are you?</a> 
 <pre>
  
 </pre>
