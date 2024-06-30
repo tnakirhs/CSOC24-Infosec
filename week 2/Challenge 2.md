@@ -12,7 +12,7 @@ When converted it can be found that <mark><b>60 144 61 156 66 65 137 154 60 154 
 Using Cyberchef, it can be found that the numbers are infact octal numbers.
 </pre>
 
-<pre>
+```python
 #The given python script decodes the text
 
 f = l = a = g = ""
@@ -30,4 +30,4 @@ g = ''.join(chr(int(str(i), 8)) for i in [60, 144, 61, 156, 66, 65, 137, 154, 60
 print(f+l+a+g)
 
 #The output is the flag <i>CSOC23{ju57_d1ff3r3n7_3nc0d1n65_l0l}</i>
-</pre>
+```
