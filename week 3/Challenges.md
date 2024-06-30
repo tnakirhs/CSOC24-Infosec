@@ -322,20 +322,71 @@ By just removing the overlaping we get the flag ***picoCTF{not_this_again_55670}
      
 ## J. <a href = "https://play.picoctf.org/practice/challenge/142">Who are you?</a> 
 <pre>
- 
+A web page is given which says 
+<i>Only people who use the official PicoBrowser are allowed on this site!</i>
+Using Burp Suite to send the requests 
 </pre>
 
-## K. <a href = "https://play.picoctf.org/practice/challenge/8?page=1&search=irish">IntroToBurp</a> 
+We need to change the ```User-Agent``` to ```PicoBrowser``` and send the request again.
+
+The response is now changed to    
+_I don't trust users visiting from another site._     
+     
+We need to add a header ```Referer``` and set its value to same as that of ```host```.    
+  
+The response is now changed to    
+_Sorry, this site only worked in 2018._      
+    
+We need to add the ```Date``` header and set it some date in 2018.      
+like ```Date: Sat, 30 Jun 2018 10:10:00 GMT```      
+
+The response is now changed to    
+_I don't trust users who can be tracked._      
+   
+We need to add ```DNT``` header and set its value to ```1```  
+
+The response is now changed to         
+_This website is only for people from Sweden._     
+       
+We now need to change the IP address to Sweden using ```X-Forwarded-For``` header    
+add ```X-Forwarded-For: 46.236.76.0```     
+
+The response is now changed to       
+_Youre in Sweden but you dont speak Swedish?_    
+
+We need to add ```Accept-Language``` header to ```sv```
+
+### Example request
+> GET / HTTP/1.1         
+> Host: mercury.picoctf.net:46199        
+> Accept-Language: sv        
+> Upgrade-Insecure-Requests: 1        
+> Date: Sat, 30 Jun 2018 10:10:00 GMT         
+> DNT: 1        
+> Content-Length: 0        
+> X-Forwarded-For: 46.236.76.0        
+> User-Agent: Picobrowser        
+> Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7        
+> Accept-Encoding: gzip, deflate, br        
+> Referer: http://mercury.picoctf.net:46199        
+> Connection: keep-alive        
+
+The flag is now revealed to be ***picoCTF{http_h34d3rs_v3ry_c0Ol_much_w0w_8d5d8d77}***     
+
+<br>   
+      
+## K. <a href = "https://play.picoctf.org/practice/challenge/419">IntroToBurp</a> 
 <pre>
  
 </pre>
 
-## L. <a href = "https://play.picoctf.org/practice/challenge/8?page=1&search=irish">Java Script Kiddie </a> 
+## L. <a href = "https://play.picoctf.org/practice/challenge/29">Java Script Kiddie </a> 
 <pre>
- 
+Will complete soon
 </pre>
 
-## M. <a href = "https://play.picoctf.org/practice/challenge/8?page=1&search=irish">Java Script Kiddie 2</a> 
+## M. <a href = "https://play.picoctf.org/practice/challenge/33">Java Script Kiddie 2</a> 
 <pre>
- 
+Will complete soon
+</pre>
 </pre>
