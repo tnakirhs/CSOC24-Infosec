@@ -3,7 +3,7 @@
 <pre>
 A <a href = "https://github.com/JustAnAverageGuy/literate-octo-fiesta/blob/main/challenge_1/source.enc">string</a> is given which looks like Base64 due to the padding. 
 </pre>
-<pre>
+```python
 #The given programs convert it into string
 
 import base64
@@ -15,9 +15,9 @@ wgJ3cnKSBhcyBmOgogICAgZi53cml0ZShlKQ=="
 print(base64.b64decode(string).decode())
 
 #The output is a python program given below.
-</pre>
+```
 
-<pre>
+```python
 with open('flag.txt', 'r') as f:
     flag = f.read()
 
@@ -29,7 +29,7 @@ for i in range(0,len(s),4):
 
 with open('output.txt', 'w') as f:
     f.write(e)
-</pre>
+```
 
 <pre>
 Since <a href = "https://github.com/JustAnAverageGuy/literate-octo-fiesta/blob/main/challenge_1/output.txt">output.txt</a> is given, we can can reverse the given program. But first we need to understand it.
@@ -56,7 +56,7 @@ Since <a href = "https://github.com/JustAnAverageGuy/literate-octo-fiesta/blob/m
   using <b>bytes.fromhex()</b> function and then converted to string using <b>decode()</b>.
 </pre>
 
-<pre>
+```python
 e = "43104f0c32017b48340179266203350636025f6b6e0a5f2730423f42"
 s = ""
 for i in range(0, len(e), 4):
@@ -65,4 +65,4 @@ for i in range(0, len(e), 4):
 print(bytes.fromhex(s).decode())
 
 #It gives the flag <i>CSOC23{345y_ba5364_4nd_x0r?}</i>
-</pre>
+```
