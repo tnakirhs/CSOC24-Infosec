@@ -3,17 +3,17 @@
 
 # Introduction  
 
-*A. Finding Flags*
+### *A. Finding Flags*
 <pre>
 <i>crypto{y0ur_f1rst_fl4g}</i>
 </pre>
 
-*B. Great Snakes*
+### *B. Great Snakes*
 <pre>
 A <a href = "https://cryptohack.org/static/challenges/great_snakes_35381fca29d68d8f3f25c9fa0a9026fb.py">python file</a> is given which when executed gives the flag <i>crypto{z3n_0f_pyth0n}.</i>
 </pre>
 
-*C. Network Attacks*
+### *C. Network Attacks*
 <pre>
 It is given to send a JSON object with the key <i><b>buy</b></i> and value <i><b>flag</b></i> on <b>socket.cryptohack.org</b> on port <b>11112</b>.
 Using <b>nc socket.cryptohack.org 11112</b> and entering <i><b>{"buy":"flag"}</i></b> returns a JSON revealing the flag 
@@ -64,9 +64,9 @@ print(response)
 
 # General    
 
-<code>- Encoding</code>   
+### <code>- Encoding</code>   
 
-*A. ASCII*
+### *A. ASCII*
 <pre>
 A list <mark>[99, 114, 121, 112, 116, 111, 123, 65, 83, 67, 73, 73, 95, 112, 114, 49, 110, 116, 52, 98, 108, 51, 125]</mark> is given.
 The numbers need to be converted to their corresponding ASCII characters to obtain a flag.
@@ -83,7 +83,7 @@ print(flag)
 
 #revealing the flag <i>crypto{ASCII_pr1nt4bl3}</i></pre>
 
-*B. Hex*
+### *B. Hex*
 <pre>
 A hex string <mark><i>63727970746f7b596f755f77696c6c5f62655f776f726b696e675f776974685f6865785f737472696e67735f615f6c6f747d</i></mark>
 is given which needs to be converted into string.</pre>
@@ -97,7 +97,7 @@ print(bytes.fromhex(st).decode())
 
 #revealing the flag <i>crypto{You_will_be_working_with_hex_strings_a_lot}</i></pre>
 
-*C. Base64*
+### *C. Base64*
 <pre>A hex string <mark><i>72bca9b68fc16ac7beeb8f849dca1d8a783e8acf9679bf9269f7bf</i></mark> is given which needs to be decoded 
 into bytes and then encoded into Base64.</pre>
 <pre>
@@ -110,7 +110,7 @@ print(base64.b64encode(byt).decode())
 
 #revealing the flag <i>crypto/Base+64+Encoding+is+Web+Safe/</i></pre>
 
-*D. Bytes and Big Integers*
+### *D. Bytes and Big Integers*
 <pre>
 Given is a long integer <mark><i>11515195063862318899931685488813747395775516287289682636499965282714637259206269</i></mark><br>It needs to be converted into string.
 It can be done by <i><b>long_to_bytes()</i></b> function from <i><b>pycryptodome</i></b>.
@@ -128,9 +128,9 @@ print(long_to_bytes(li).decode())
 
 <br>
 
-<code>- XOR</code>
+### <code>- XOR</code>
 
-*A. XOR Starter*
+### *A. XOR Starter*
 <pre>
 A string <i><b>label</b></i> is given whose each character is to be XOR with the integer <b>13</b>.
 First convert both 'label' and 13 into binary and then XOR and convert back to string.
@@ -157,7 +157,7 @@ for i in result:
 #The flag is <i>crypto{aloha}</i>
 </pre>
 
-*B. XOR Properties*
+### *B. XOR Properties*
 <pre>
 KEY1 = a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313
 KEY2 ^ KEY1 = 37dcb292030faa90d07eec17e3b1c6d8daf94c35d4c9191a5e1e
